@@ -5,6 +5,7 @@ import(
 	"net"
 	"io"
 	"os"
+	"fmt"
 )
 
 func main(){
@@ -41,6 +42,10 @@ func main(){
 		go func() {
 			log.Printf("From: %v Reciving data: %s", addr.String(), string(buf[:n]))
 		}()
+
+		//送信処理
+		localAddr := udpConn.LocalAddr().(*net.UDPAddr).String()
+		fmt.Println(localAddr)
 		
 	}
 }

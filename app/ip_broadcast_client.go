@@ -12,8 +12,8 @@ func main() {
 	}
 	defer conn.Close()
 
-	fmt.Println("Sending to server")
-	_, err = conn.Write([]byte("Hello from Client"))
+	fmt.Println("Sending UDP")
+	_, err = conn.Write([]byte("ゆずソフトはいいぞ"))
 	if err != nil {
 		panic(err)
 	}
